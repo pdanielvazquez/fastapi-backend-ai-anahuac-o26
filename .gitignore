@@ -1,2 +1,7 @@
 /farm-env
 /__pycache__
+**/__pycache__/
+.env
+.env.*
+!.env.example
+**/__init__.py
