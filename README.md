@@ -42,6 +42,15 @@ documentación interactiva está en
 - `POST /api/v1/trazas/`: registra una acción de agente.
 - `GET /api/v1/trazas/sesion/{session_id}?limit=500`: recupera trazas ordenadas
   cronológicamente.
+- `POST /api/v1/validar-semantica`: valida una inscripción con Owlready2/HermiT
+  y registra el dictamen en las trazas. También se conserva
+  `/api/v1/validacion/validar-inscripcion` como ruta compatible.
+
+La ontología predeterminada es `ontologia-ia-anahuac-ejemplo-1.owx` en la raíz.
+Se puede cambiar con `ONTOLOGY_PATH`; `REASONER_JAVA_MEMORY_MB` configura el heap
+de HermiT (512 MB por defecto). El razonador necesita Java disponible en `PATH`.
+El ejemplo CrewAI incluye herramientas para consultar MongoDB y solicitar la
+validación semántica; `FASTAPI_BASE_URL` permite cambiar la URL del backend.
 
 El ejemplo opcional de cliente CrewAI requiere instalar también
 `requirements-crewai.txt`; después se ejecuta con `python client_crewai_example.py`.
