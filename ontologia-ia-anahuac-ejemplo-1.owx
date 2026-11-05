@@ -1,0 +1,583 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/pdani/ontologies/2026/7/ontologia-ia-anahuac"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/pdani/ontologies/2026/7/ontologia-ia-anahuac">
+    <Prefix name="" IRI="http://www.semanticweb.org/pdani/ontologies/2026/7/ontologia-ia-anahuac/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Academico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Administrativo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alumno"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coordinador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Empleado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#JefeDepartamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Materia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Persona"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Profesor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Visitante"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#atiendeA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esImpartidaPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esProfesorDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estaInscritoEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#imparteClaseA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#registraA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#solicitaAtencion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#solicitaRegistro"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneInscrtos"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tomaClaseCon"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneClave"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneCreditos"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneEdad"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneGenero"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneNoCuenta"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneNombre"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneNombreMateria"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tienePeso"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alumno_001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alumno_002"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alumno_003"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#materia_001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#materia_002"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#profesor_001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#profesor_002"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Alumno"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#estaInscritoEn"/>
+            <Class IRI="#Materia"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Materia"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#esImpartidaPor"/>
+            <Class IRI="#Profesor"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Profesor"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#imparteClaseA"/>
+            <Class IRI="#Alumno"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Academico"/>
+        <Class IRI="#Empleado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Administrativo"/>
+        <Class IRI="#Empleado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Alumno"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Alumno"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#tieneNoCuenta"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coordinador"/>
+        <Class IRI="#Academico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Empleado"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#JefeDepartamento"/>
+        <Class IRI="#Academico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Materia"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#tieneClave"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Materia"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#tieneCreditos"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Materia"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#tieneNombreMateria"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Persona"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#tieneEdad"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Persona"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#tieneGenero"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Persona"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#tieneNombre"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Persona"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#tienePeso"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Profesor"/>
+        <Class IRI="#Academico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Visitante"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Academico"/>
+        <Class IRI="#Administrativo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Alumno"/>
+        <Class IRI="#Empleado"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Alumno"/>
+        <Class IRI="#Visitante"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Coordinador"/>
+        <Class IRI="#JefeDepartamento"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Coordinador"/>
+        <Class IRI="#Profesor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Empleado"/>
+        <Class IRI="#Visitante"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#JefeDepartamento"/>
+        <Class IRI="#Profesor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Materia"/>
+        <Class IRI="#Persona"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Alumno"/>
+        <NamedIndividual IRI="#alumno_001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Alumno"/>
+        <NamedIndividual IRI="#alumno_002"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Alumno"/>
+        <NamedIndividual IRI="#alumno_003"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Materia"/>
+        <NamedIndividual IRI="#materia_001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Materia"/>
+        <NamedIndividual IRI="#materia_002"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Profesor"/>
+        <NamedIndividual IRI="#profesor_001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Profesor"/>
+        <NamedIndividual IRI="#profesor_002"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaInscritoEn"/>
+        <NamedIndividual IRI="#alumno_001"/>
+        <NamedIndividual IRI="#materia_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaInscritoEn"/>
+        <NamedIndividual IRI="#alumno_002"/>
+        <NamedIndividual IRI="#materia_002"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaInscritoEn"/>
+        <NamedIndividual IRI="#alumno_003"/>
+        <NamedIndividual IRI="#materia_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaInscritoEn"/>
+        <NamedIndividual IRI="#alumno_003"/>
+        <NamedIndividual IRI="#materia_002"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esImpartidaPor"/>
+        <NamedIndividual IRI="#materia_001"/>
+        <NamedIndividual IRI="#profesor_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esImpartidaPor"/>
+        <NamedIndividual IRI="#materia_002"/>
+        <NamedIndividual IRI="#profesor_002"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esProfesorDe"/>
+        <NamedIndividual IRI="#profesor_001"/>
+        <NamedIndividual IRI="#materia_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esProfesorDe"/>
+        <NamedIndividual IRI="#profesor_002"/>
+        <NamedIndividual IRI="#materia_002"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneEdad"/>
+        <NamedIndividual IRI="#alumno_001"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">45</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneGenero"/>
+        <NamedIndividual IRI="#alumno_001"/>
+        <Literal>Masculino</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneNoCuenta"/>
+        <NamedIndividual IRI="#alumno_001"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">716701</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneNombre"/>
+        <NamedIndividual IRI="#alumno_001"/>
+        <Literal>Daniel Vázquez</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tienePeso"/>
+        <NamedIndividual IRI="#alumno_001"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">100.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneNoCuenta"/>
+        <NamedIndividual IRI="#alumno_002"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">100000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneNombre"/>
+        <NamedIndividual IRI="#alumno_002"/>
+        <Literal>Salvador Zamudio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneNoCuenta"/>
+        <NamedIndividual IRI="#alumno_003"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">202010</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneCreditos"/>
+        <NamedIndividual IRI="#materia_001"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneNombreMateria"/>
+        <NamedIndividual IRI="#materia_001"/>
+        <Literal>Programación Avanzada y Algoritmos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneCreditos"/>
+        <NamedIndividual IRI="#materia_002"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneNombreMateria"/>
+        <NamedIndividual IRI="#materia_002"/>
+        <Literal>Agentes Inteligentes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneEdad"/>
+        <NamedIndividual IRI="#profesor_001"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">55</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneGenero"/>
+        <NamedIndividual IRI="#profesor_001"/>
+        <Literal>Masculino</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneNombre"/>
+        <NamedIndividual IRI="#profesor_001"/>
+        <Literal>Germán Vallejo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneEdad"/>
+        <NamedIndividual IRI="#profesor_002"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">48</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tieneNombre"/>
+        <NamedIndividual IRI="#profesor_002"/>
+        <Literal>Gabriela Ruiz</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#atiendeA"/>
+        <ObjectProperty IRI="#solicitaAtencion"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#esImpartidaPor"/>
+        <ObjectProperty IRI="#esProfesorDe"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#estaInscritoEn"/>
+        <ObjectProperty IRI="#tieneInscrtos"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#imparteClaseA"/>
+        <ObjectProperty IRI="#tomaClaseCon"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#registraA"/>
+        <ObjectProperty IRI="#solicitaRegistro"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#atiendeA"/>
+        <Class IRI="#JefeDepartamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esImpartidaPor"/>
+        <Class IRI="#Materia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esProfesorDe"/>
+        <Class IRI="#Profesor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estaInscritoEn"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#imparteClaseA"/>
+        <Class IRI="#Profesor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#registraA"/>
+        <Class IRI="#JefeDepartamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#solicitaAtencion"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#solicitaRegistro"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneInscrtos"/>
+        <Class IRI="#Materia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tomaClaseCon"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#atiendeA"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esImpartidaPor"/>
+        <Class IRI="#Profesor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esProfesorDe"/>
+        <Class IRI="#Materia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estaInscritoEn"/>
+        <Class IRI="#Materia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#imparteClaseA"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#registraA"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#solicitaAtencion"/>
+        <Class IRI="#JefeDepartamento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#solicitaRegistro"/>
+        <Class IRI="#Coordinador"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneInscrtos"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tomaClaseCon"/>
+        <Class IRI="#Profesor"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneClave"/>
+        <Class IRI="#Materia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneCreditos"/>
+        <Class IRI="#Materia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneEdad"/>
+        <Class IRI="#Persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneGenero"/>
+        <Class IRI="#Persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneNoCuenta"/>
+        <Class IRI="#Alumno"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneNombre"/>
+        <Class IRI="#Persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneNombreMateria"/>
+        <Class IRI="#Materia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tienePeso"/>
+        <Class IRI="#Persona"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneClave"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneCreditos"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneEdad"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneGenero"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneNoCuenta"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneNombre"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneNombreMateria"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tienePeso"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
